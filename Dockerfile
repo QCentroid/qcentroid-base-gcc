@@ -1,7 +1,7 @@
-FROM python:{{programming_language_version}}-slim
+FROM python:3.12-slim
 ENV PIP_ROOT_USER_ACTION=ignore
 ENV SOLVER_PROGRAMMING_LANGUAGE=python
-ENV SOLVER_PROGRAMMING_LANGUAGE_VERSION={{programming_language_version}}
+ENV SOLVER_PROGRAMMING_LANGUAGE_VERSION=3.12
 RUN echo "deb http://deb.debian.org/debian bookworm-backports main" >> /etc/apt/sources.list
 RUN apt update && apt install -y libcurl4-openssl-dev libgomp1 && apt-get install -y build-essential libstdc++6 && apt-get update && apt clean && rm -rf /var/lib/apt/lists/*
 
