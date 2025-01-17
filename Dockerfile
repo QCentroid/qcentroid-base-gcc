@@ -6,15 +6,15 @@ RUN echo "deb http://deb.debian.org/debian bookworm-backports main" >> /etc/apt/
 RUN apt update && apt install -y libcurl4-openssl-dev libgomp1 && apt-get install -y build-essential libstdc++6 \ 
     build-essential wget libgmp-dev libmpfr-dev libmpc-dev && apt clean && rm -rf /var/lib/apt/lists/*
 
-RUN wget -q https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.gz && \
-    tar -xf gcc-13.2.0.tar.gz && \
-    cd gcc-13.2.0 && \
+RUN wget -q https://ftp.gnu.org/gnu/gcc/gcc-14.2.0/gcc-14.2.0.tar.gz && \
+    tar -xf gcc-14.2.0.tar.gz && \
+    cd gcc-14.2.0 && \
     ./contrib/download_prerequisites && \
     ./configure --disable-multilib --enable-languages=c,c++ && \
     make -j$(nproc) && \
     make install && \
     cd .. && \
-    rm -rf gcc-13.2.0.tar.gz gcc-13.2.0
+    rm -rf gcc-14.2.0.tar.gz gcc-14.2.0
 
 RUN update-alternatives \
         --install /usr/bin/gcc gcc /usr/local/bin/gcc 60 \
