@@ -8,22 +8,6 @@ ENV SOLVER_PROGRAMMING_LANGUAGE_VERSION=3.12
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Instalamos paquetes necesarios para compilar Python desde fuente
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    build-essential \
-    make \
-    wget \
-    curl \
-    software-properties-common \
-    ca-certificates \
-    libssl-dev \
-    libffi-dev \
-    zlib1g-dev \
-    libbz2-dev \
-    libreadline-dev \
-    libsqlite3-dev \
-    tk-dev \
-    python3.12 \
-    xz-utils && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends  build-essential make wget curl 
+RUN apt-get install -y --no-install-recommends software-properties-common ca-certificates libssl-dev libffi-dev zlib1g-dev libbz2-dev 
+RUN apt-get install -y --no-install-recommends libreadline-dev libsqlite3-dev tk-dev python3.12 xz-utils && apt-get clean && rm -rf /var/lib/apt/lists/*
