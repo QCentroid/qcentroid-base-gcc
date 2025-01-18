@@ -12,4 +12,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends  build-essentia
 RUN apt-get install -y --no-install-recommends software-properties-common ca-certificates libssl-dev libffi-dev zlib1g-dev libbz2-dev 
 RUN apt-get install -y --no-install-recommends libreadline-dev libsqlite3-dev tk-dev python3 python3-pip python3-venv xz-utils && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get -y upgrade
-RUN python3 -m venv venv && . venv/bin/activate
+
