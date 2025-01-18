@@ -23,7 +23,7 @@ RUN apt-get update && \
     libreadline-dev \
     libsqlite3-dev \
     tk-dev \
-    python{{SOLVER_PROGRAMMING_LANGUAGE_VERSION}} \
+    python3.12 \
     xz-utils && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
